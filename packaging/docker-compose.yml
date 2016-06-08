@@ -1,0 +1,20 @@
+version: '2'
+services:
+  consumer:
+    build: consumer/.
+    tty: true
+    links:
+    - zookeeper:zk
+    ports:
+    - 8080:8080
+
+  service:
+    build: service/.
+    tty: true
+    links:
+    - zookeeper:zk
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports: 
+    - 2181:2181
