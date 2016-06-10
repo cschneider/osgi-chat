@@ -9,6 +9,6 @@ public class ChatConverter {
     public ChatMessage convert(Message message) {
         IrcMessage ircMessage = (IrcMessage) message;
         String msg = ircMessage.getMessage() != null ? ircMessage.getMessage() : ircMessage.getMessageType();
-        return new ChatMessage(ircMessage.getUser().getNick(), msg);
+        return new ChatMessage("irc", ircMessage.getUser().getNick(), msg);
     }
 }

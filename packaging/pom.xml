@@ -12,7 +12,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>index</module>
+		
 		
 		
 		<module>all</module>

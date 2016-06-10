@@ -8,8 +8,10 @@ public class ChatMessage implements Serializable {
     private Date time;
     private String sender;
     private String message;
+    private String senderId;
     
-    public ChatMessage(String sender, String message) {
+    public ChatMessage(String senderId, String sender, String message) {
+        this.senderId = senderId;
         this.time = new Date();
         this.sender = sender;
         this.message = message;
@@ -17,6 +19,10 @@ public class ChatMessage implements Serializable {
     
     public Date getTime() {
         return time;
+    }
+    
+    public String getSenderId() {
+        return senderId;
     }
     
     public String getSender() {

@@ -19,7 +19,7 @@ public class ChatBuffer implements ChatListener {
 
     public void onMessage(ChatMessage message) {
         if (pos == history.size() - 1) {
-            pos ++;
+            pos++;
             listener.onMessage(message);
         }
         history.add(message);
@@ -38,5 +38,5 @@ public class ChatBuffer implements ChatListener {
         }
         listener.onMessage(history.get(pos));
     }
- 
+
 }
