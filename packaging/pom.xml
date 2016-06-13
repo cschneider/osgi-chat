@@ -8,13 +8,9 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>net.lr.demo.chat.packaging</artifactId>
-	<groupId>net.lr.demo.chat</groupId>
 	<packaging>pom</packaging>
 
 	<modules>
-		
-		
-		
 		<module>all</module>
 		<module>display</module>
 		<module>irc</module>

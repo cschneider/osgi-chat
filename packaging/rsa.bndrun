@@ -18,5 +18,5 @@
 	org.ops4j.pax.logging.DefaultServiceLog.level=INFO,\
 	felix.fileinstall.dir=./etc,\
 	felix.fileinstall.noInitialDelay=true,\
-	org.osgi.framework.system.packages.extra=sun.misc,\
+	org.osgi.framework.system.packages.extra=sun.misc,javax.annotation.meta\
 	felix.fileinstall.enableConfigSave=false

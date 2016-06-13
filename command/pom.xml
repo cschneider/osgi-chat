@@ -10,7 +10,6 @@
 	</parent>
 
 	<artifactId>net.lr.demo.chat.command</artifactId>
-	<packaging>bundle</packaging>
 
 	<dependencies>
 		<dependency>

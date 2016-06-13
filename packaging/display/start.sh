@@ -1,1 +1,2 @@
-docker run --rm --name echotcp.service -t -i -p 2181:2181 echotcp.service 
+docker run --rm --name chat.display -t -i chat.display
+

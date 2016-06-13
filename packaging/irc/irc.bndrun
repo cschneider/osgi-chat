@@ -4,12 +4,12 @@
 	net.lr.demo.chat.api;version='[1.0.0,1.0.1)',\
 	net.lr.demo.chat.command;version='[1.0.0,1.0.1)',\
 	net.lr.demo.chat.irc;version='[1.0.0,1.0.1)',\
-	org.apache.aries.rsa.core;version='[1.8.0,1.8.1)',\
-	org.apache.aries.rsa.discovery.local;version='[1.8.0,1.8.1)',\
-	org.apache.aries.rsa.discovery.zookeeper;version='[1.8.0,1.8.1)',\
-	org.apache.aries.rsa.provider.tcp;version='[1.8.0,1.8.1)',\
-	org.apache.aries.rsa.spi;version='[1.8.0,1.8.1)',\
-	org.apache.aries.rsa.topology-manager;version='[1.8.0,1.8.1)',\
+	org.apache.aries.rsa.core;version='[1.9.0,1.9.1)',\
+	org.apache.aries.rsa.discovery.local;version='[1.9.0,1.9.1)',\
+	org.apache.aries.rsa.discovery.zookeeper;version='[1.9.0,1.9.1)',\
+	org.apache.aries.rsa.provider.tcp;version='[1.9.0,1.9.1)',\
+	org.apache.aries.rsa.spi;version='[1.9.0,1.9.1)',\
+	org.apache.aries.rsa.topology-manager;version='[1.9.0,1.9.1)',\
 	org.apache.camel.camel-core;version='[2.16.3,2.16.4)',\
 	org.apache.camel.camel-core-osgi;version='[2.16.3,2.16.4)',\
 	org.apache.camel.camel-irc;version='[2.16.3,2.16.4)',\
@@ -33,10 +33,8 @@
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
 	osgi.identity;filter:='(osgi.identity=org.ops4j.pax.logging.pax-logging-service)',\
-	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.spi)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.discovery.zookeeper)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.provider.tcp)',\
-	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.core)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.topology-manager)',\
 	osgi.identity;filter:='(osgi.identity=net.lr.demo.chat.irc)',\
 	osgi.identity;filter:='(osgi.identity=net.lr.demo.chat.command)'

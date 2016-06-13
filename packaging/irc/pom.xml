@@ -19,7 +19,7 @@
 				<artifactId>bndrun-maven-plugin</artifactId>
 				<version>1.0.0-SNAPSHOT</version>
 				<configuration>
-					<bndrun>consumer.bndrun</bndrun>
+					<bndrun>irc.bndrun</bndrun>
 					<targetDir>.</targetDir>
 				</configuration>
 				<executions>

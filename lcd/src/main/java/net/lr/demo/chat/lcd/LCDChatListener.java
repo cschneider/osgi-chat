@@ -21,20 +21,22 @@ import net.lr.demo.chat.service.ChatMessage;
 @Component(property = //
 {
  "service.exported.interfaces=*"
-}, name = "lcd", immediate = true)
+}, //
+    name = "lcd")
 @Designate(ocd = LCDChatListener.TfConfig.class)
 public class LCDChatListener implements ChatListener {
     private IPConnection ipcon;
     private BrickletLCD20x4 lcd;
     private ChatBuffer buffer;
     private String id = UUID.randomUUID().toString();
-    
+
     @Reference
     ChatBroker broker;
 
     @ObjectClassDefinition(name = "Tinkerforge config")
     @interface TfConfig {
         String host() default "localhost";
+
         int port() default 4223;
     }
 

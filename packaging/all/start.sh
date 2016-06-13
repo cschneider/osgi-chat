@@ -1,1 +1,2 @@
-docker run -i -t --link echotcp.service:service echotcp.consumer
+docker run -i -t chat.all
+

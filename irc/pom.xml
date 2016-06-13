@@ -10,17 +10,11 @@
 	</parent>
 
 	<artifactId>net.lr.demo.chat.irc</artifactId>
-	<packaging>bundle</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>net.lr.demo.chat</groupId>
 			<artifactId>net.lr.demo.chat.api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.tinkerforge</groupId>
-			<artifactId>tinkerforge</artifactId>
-			<version>2.1.8</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.camel</groupId>
@@ -32,18 +26,6 @@
 			<artifactId>camel-irc</artifactId>
 			<version>2.16.3</version>
 		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-jdk14</artifactId>
-			<version>1.7.21</version>
-		</dependency>
-		<!-- 
-		<dependency>
-			<groupId>org.bytedeco</groupId>
-			<artifactId>javacv</artifactId>
-			<version>1.2</version>
-		</dependency>
-		 -->
 	</dependencies>
 
 </project>

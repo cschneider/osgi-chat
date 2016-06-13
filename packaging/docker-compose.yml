@@ -1,15 +1,13 @@
 version: '2'
 services:
-  consumer:
-    build: consumer/.
+  irc:
+    build: irc/.
     tty: true
     links:
     - zookeeper:zk
-    ports:
-    - 8080:8080
 
-  service:
-    build: service/.
+  lcd:
+    build: display/.
     tty: true
     links:
     - zookeeper:zk

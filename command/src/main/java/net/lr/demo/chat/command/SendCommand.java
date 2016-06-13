@@ -1,4 +1,4 @@
-package net.lr.demo.chat.lcd;
+package net.lr.demo.chat.command;
 
 import java.util.UUID;
 
