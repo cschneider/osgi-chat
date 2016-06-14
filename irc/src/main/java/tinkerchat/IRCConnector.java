@@ -19,37 +19,44 @@ import net.lr.demo.chat.service.ChatMessage;
 
 @Component( //
     name = "connector.irc", //
-    immediate = true //
-)
+    immediate = true, //
+    property = //
+    {
+     "service.exported.interfaces=*",
+    })
 public class IRCConnector implements ChatListener {
     private OsgiDefaultCamelContext context;
     @Reference
-    private ChatBroker listener;
+    private ChatBroker broker;
     private ProducerTemplate producer;
     private String ircURI;
-    
+
     @ObjectClassDefinition(name = "IRC config")
     @interface TfConfig {
         String nick() default "tinkerbot";
+
         String server() default "193.10.255.100";
+
         int port() default 6667;
+
         String channel() default "#jbcnconf";
     }
 
     @Activate
     public void activate(BundleContext bc, TfConfig config) throws Exception {
         context = new OsgiDefaultCamelContext(bc, new OsgiServiceRegistry(bc));
-        
-        // FIXME Somehow the components are not picked up 
+
+        // FIXME Somehow the components are not picked up
         context.addComponent("irc", new IrcComponent());
         context.addComponent("bean", new BeanComponent());
-        
-        ircURI = String.format("irc:%s@%s:%d/%s", config.nick(), config.server(), config.port(), config.channel());
+
+        ircURI = String.format("irc:%s@%s:%d/%s", config.nick(), config.server(), config.port(),
+                               config.channel());
         context.addRoutes(new RouteBuilder() {
 
             @Override
             public void configure() throws Exception {
-                from(ircURI).bean(new ChatConverter()).bean(listener);
+                from(ircURI).bean(new ChatConverter()).bean(broker);
             }
         });
         context.start();

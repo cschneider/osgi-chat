@@ -4,15 +4,16 @@ services:
     build: irc/.
     tty: true
     links:
-    - zookeeper:zk
+    - zk
 
-  lcd:
+  display:
     build: display/.
     tty: true
     links:
-    - zookeeper:zk
+    - zk
 
-  zookeeper:
+  zk:
     image: wurstmeister/zookeeper
     ports: 
     - 2181:2181
+

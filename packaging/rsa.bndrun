@@ -11,7 +11,7 @@
 -runee: JavaSE-1.8
 
 -runproperties: \
-	aries.rsa.hostname=localhost,\
+	aries.rsa.hostname=172.17.0.1,\
 	felix.cm.loglevel=4,\
 	org.osgi.framework.bootdelegation=*,\
 	felix.fileinstall.log.level=4,\
