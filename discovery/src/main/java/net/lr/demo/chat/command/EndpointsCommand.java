@@ -1,11 +1,12 @@
 package net.lr.demo.chat.command;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import org.apache.karaf.shell.table.ShellTable;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.Constants;
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.remoteserviceadmin.EndpointDescription;
 import org.osgi.service.remoteserviceadmin.EndpointListener;
@@ -19,8 +20,15 @@ import org.osgi.service.remoteserviceadmin.EndpointListener;
     })
 public class EndpointsCommand implements EndpointListener {
     Set<EndpointDescription> endpoints = new HashSet<>();
+    private String frameworkId;
+    
+    @Activate
+    public void activate(BundleContext context) {
+        this.frameworkId = context.getProperty(Constants.FRAMEWORK_UUID);
+    }
 
     public void endpoints() {
+        System.out.println("Endpoints for framework " + frameworkId);
         ShellTable table = new ShellTable();
         table.column("id");
         table.column("interfaces");
