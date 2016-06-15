@@ -1,14 +1,12 @@
 package net.lr.demo.chat.lcd;
 
-import java.util.UUID;
-
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.tinkerforge.BrickletMotionDetector;
+import com.tinkerforge.BrickletMotionDetector.MotionDetectedListener;
 import com.tinkerforge.IPConnection;
 
 import net.lr.demo.chat.service.ChatBroker;
@@ -16,7 +14,6 @@ import net.lr.demo.chat.service.ChatMessage;
 
 @Component(immediate = true, service=MotionDetector.class)
 public class MotionDetector {
-    private static Logger LOG = LoggerFactory.getLogger(MotionDetector.class);
 
     @Reference
     TinkerConnect tinkerConnect;
@@ -24,12 +21,23 @@ public class MotionDetector {
     @Reference
     ChatBroker broker;
 
-    private String id = UUID.randomUUID().toString();
+    private BrickletMotionDetector motion;
+    private MotionDetectedListener listener;
 
     @Activate
     public void activate() throws Exception {
         IPConnection ipcon = tinkerConnect.getConnection();
-        BrickletMotionDetector motion = new BrickletMotionDetector("sHt", ipcon);
-        motion.addMotionDetectedListener(() -> broker.onMessage(new ChatMessage(id, "sensor", "Motion detected")));
+        motion = new BrickletMotionDetector("sHt", ipcon);
+        listener = () -> sendMessage();
+        motion.addMotionDetectedListener(listener);
+    }
+    
+    @Deactivate
+    public void deActivate() throws Exception {
+        motion.removeMotionDetectedListener(listener);
+    }
+
+    private void sendMessage() {
+        broker.onMessage(new ChatMessage("sensor", "sensor", "Motion detected"));
     }
 }

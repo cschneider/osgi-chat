@@ -3,17 +3,14 @@ services:
   irc:
     build: irc/.
     tty: true
-    links:
-    - zk
+    stdin_open: True
 
   display:
     build: display/.
     tty: true
-    links:
-    - zk
+    stdin_open: True
 
   zk:
     image: wurstmeister/zookeeper
     ports: 
     - 2181:2181
-

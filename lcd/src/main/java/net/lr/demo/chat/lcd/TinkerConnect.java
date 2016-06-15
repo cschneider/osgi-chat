@@ -12,10 +12,7 @@ import org.slf4j.LoggerFactory;
 import com.tinkerforge.IPConnection;
 import com.tinkerforge.NotConnectedException;
 
-@Component(
-    name = "tf",
-    configurationPolicy = ConfigurationPolicy.REQUIRE,
-    service = TinkerConnect.class)
+@Component(name = "tf", configurationPolicy = ConfigurationPolicy.REQUIRE, service = TinkerConnect.class)
 @Designate(ocd = TinkerConnect.TfConfig.class)
 public class TinkerConnect {
     private static Logger LOG = LoggerFactory.getLogger(TinkerConnect.class);
@@ -41,7 +38,6 @@ public class TinkerConnect {
         ipcon.disconnect();
     }
 
-    
     IPConnection getConnection() {
         return ipcon;
     }

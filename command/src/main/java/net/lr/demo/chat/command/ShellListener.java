@@ -13,9 +13,7 @@ public class ShellListener implements ChatListener {
 
     @Override
     public void onMessage(ChatMessage message) {
-        if (!"shell".equals(message.getSenderId())) {
-            System.out.println(String.format("%tT %s: %s", message.getTime(), message.getSender(),
-                                             message.getMessage()));
-        }
+        System.out.println(String.format("%tT %s: %s", message.getTime(), message.getSender(),
+                                         message.getMessage()));
     }
 }

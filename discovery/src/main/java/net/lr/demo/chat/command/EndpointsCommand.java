@@ -34,7 +34,6 @@ public class EndpointsCommand implements EndpointListener {
         table.column("interfaces");
         table.column("framework");
         table.column("comp name");
-        System.out.println("Known Endpoints:");
         endpoints.stream().forEach((ep)->print(table, ep));
         table.print(System.out);
     }

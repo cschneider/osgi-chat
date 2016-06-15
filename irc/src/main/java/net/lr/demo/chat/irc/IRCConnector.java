@@ -1,4 +1,4 @@
-package tinkerchat;
+package net.lr.demo.chat.irc;
 
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.RouteBuilder;

@@ -1,4 +1,4 @@
-package tinkerchat;
+package net.lr.demo.chat.irc;
 
 import org.apache.camel.Message;
 import org.apache.camel.component.irc.IrcMessage;
