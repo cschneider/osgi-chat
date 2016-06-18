@@ -13,8 +13,6 @@ public class ChatBroker {
 
     @Reference
     volatile List<ChatListener> listeners;
-    
-    
 
     public void onMessage(ChatMessage message) {
         listeners.parallelStream().forEach((listener)->send(message, listener)); 
