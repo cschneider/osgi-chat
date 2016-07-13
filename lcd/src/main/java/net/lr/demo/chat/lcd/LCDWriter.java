@@ -18,6 +18,7 @@ import net.lr.demo.chat.service.ChatMessage;
 @Component(property = //
 {
  "service.exported.interfaces=*",
+ "org.apache.cxf.ws.address=/lcd"
 })
 public class LCDWriter implements ChatListener {
     private BrickletLCD20x4 lcd;

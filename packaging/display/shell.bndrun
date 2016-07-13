@@ -1,0 +1,56 @@
+-standalone: /home/cschneider/.m2/repository/index.xml.gz
+
+-runsystemcapabilities: ${native_capability}
+
+-resolve.effective: active;skip:="osgi.service"
+
+-runblacklist: \
+    osgi.identity;filter:='(osgi.identity=slf4j.api)'
+
+-runfw: org.apache.felix.framework;version='[5.4.0,5.4.0]'
+-runee: JavaSE-1.8
+
+-runproperties: \
+	org.osgi.framework.startlevel.beginning=100,\
+	felix.cm.loglevel=4,\
+	felix.fileinstall.log.level=4,\
+	karaf.systemBundlesStartLevel=0,\
+	org.ops4j.pax.logging.DefaultServiceLog.level=INFO,\
+	karaf.startLocalConsole=true,\
+	felix.fileinstall.dir=./etc,\
+	karaf.local.roles='admin,manager,viewer,systembundles',\
+	felix.fileinstall.noInitialDelay=true,\
+	org.osgi.framework.system.packages.extra=sun.misc,\
+	javax.annotation.metafelix.fileinstall.enableConfigSave=false
+
+-runrequires: \
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.eventadmin)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.metatype)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.fileinstall)',\
+	osgi.identity;filter:='(osgi.identity=org.ops4j.pax.logging.pax-logging-service)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.karaf.shell.commands)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.karaf.shell.core)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.karaf.bundle.core)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.karaf.shell.ssh)'
+
+-runbundles: \
+	jline;version='[2.14.1,2.14.2)',\
+	org.apache.felix.configadmin;version='[1.8.8,1.8.9)',\
+	org.apache.felix.eventadmin;version='[1.4.6,1.4.7)',\
+	org.apache.felix.fileinstall;version='[3.5.2,3.5.3)',\
+	org.apache.felix.gogo.command;version='[0.16.0,0.16.1)',\
+	org.apache.felix.gogo.runtime;version='[0.10.0,0.10.1)',\
+	org.apache.felix.metatype;version='[1.1.2,1.1.3)',\
+	org.apache.karaf.bundle.core;version='[4.0.5,4.0.6)',\
+	org.apache.karaf.jaas.boot;version='[4.0.5,4.0.6)',\
+	org.apache.karaf.jaas.config;version='[4.0.5,4.0.6)',\
+	org.apache.karaf.jaas.modules;version='[4.0.5,4.0.6)',\
+	org.apache.karaf.shell.commands;version='[4.0.5,4.0.6)',\
+	org.apache.karaf.shell.core;version='[4.0.5,4.0.6)',\
+	org.apache.karaf.shell.ssh;version='[4.0.5,4.0.6)',\
+	org.apache.servicemix.bundles.not-yet-commons-ssl;version='[0.3.11,0.3.12)',\
+	org.apache.sshd.core;version='[0.14.0,0.14.1)',\
+	org.fusesource.jansi;version='[1.12.0,1.12.1)',\
+	org.jledit.core;version='[0.2.1,0.2.2)',\
+	org.ops4j.pax.logging.pax-logging-api;version='[1.8.5,1.8.6)',\
+	org.ops4j.pax.logging.pax-logging-service;version='[1.8.5,1.8.6)'

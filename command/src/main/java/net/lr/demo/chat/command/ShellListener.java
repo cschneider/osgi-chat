@@ -8,6 +8,7 @@ import net.lr.demo.chat.service.ChatMessage;
 @Component(property = //
 {
  "service.exported.interfaces=*",
+ "org.apache.cxf.ws.address=/shell"
 })
 public class ShellListener implements ChatListener {
 

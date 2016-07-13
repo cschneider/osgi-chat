@@ -12,7 +12,7 @@
 	<artifactId>net.lr.demo.chat.index</artifactId>
 
 	<dependencies>
-		<!-- basic bundles -->
+		<!-- Basic Felix bundles -->
 		<dependency>
 			<groupId>org.apache.felix</groupId>
 			<artifactId>org.apache.felix.framework</artifactId>
@@ -71,11 +71,6 @@
 			<version>0.12.0</version>
 		</dependency>
 		<dependency>
-			<groupId>org.ops4j.pax.logging</groupId>
-			<artifactId>pax-logging-service</artifactId>
-			<version>1.8.5</version>
-		</dependency>
-		<dependency>
 			<groupId>org.apache.felix</groupId>
 			<artifactId>org.apache.felix.scr</artifactId>
 			<version>2.0.2</version>
@@ -86,14 +81,46 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.http.jetty</artifactId>
+			<version>3.0.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.eclipse.jetty</groupId>
+					<artifactId>jetty-server</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.eclipse.jetty.websocket</groupId>
+					<artifactId>websocket-server</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.felix</groupId>
+					<artifactId>org.apache.felix.http.base</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.ops4j.pax.logging</groupId>
+			<artifactId>pax-logging-service</artifactId>
+			<version>1.8.5</version>
+		</dependency>
 
-		<!--Aries Remote Service Admin -->
+		<!--Remote Service Admin -->
 		<dependency>
 			<groupId>org.apache.aries.rsa</groupId>
 			<artifactId>repository</artifactId>
-			<version>1.9-SNAPSHOT</version>
+			<version>1.9.0</version>
 			<type>pom</type>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf.dosgi</groupId>
+			<artifactId>cxf-dosgi-ri-repository</artifactId>
+			<version>2.0-SNAPSHOT</version>
+			<type>pom</type>
+		</dependency>
+
 
 		<!-- Camel IRC -->
 		<dependency>
@@ -105,6 +132,33 @@
 			<groupId>org.apache.servicemix.bundles</groupId>
 			<artifactId>org.apache.servicemix.bundles.irclib</artifactId>
 			<version>1.10_5</version>
+		</dependency>
+		
+		<!-- Karaf shell -->
+		<dependency>
+			<groupId>jline</groupId>
+			<artifactId>jline</artifactId>
+			<version>2.14.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.karaf.shell</groupId>
+			<artifactId>org.apache.karaf.shell.core</artifactId>
+			<version>4.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.karaf.shell</groupId>
+			<artifactId>org.apache.karaf.shell.commands</artifactId>
+			<version>4.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.karaf.shell</groupId>
+			<artifactId>org.apache.karaf.shell.ssh</artifactId>
+			<version>4.0.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.karaf.bundle</groupId>
+			<artifactId>org.apache.karaf.bundle.core</artifactId>
+			<version>4.0.5</version>
 		</dependency>
 
 		<!-- Example bundles -->
@@ -127,26 +181,34 @@
 			<artifactId>net.lr.demo.chat.command</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>net.lr.demo.chat</groupId>
-			<artifactId>org.apache.aries.rsa.discovery.shell</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.fusesource.jansi</groupId>
-			<artifactId>jansi</artifactId>
-			<version>1.12</version>
-		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+			<!-- 
 			<plugin>
 				<groupId>net.lr</groupId>
 				<artifactId>osgi-index-maven-plugin</artifactId>
 				<version>1.0.0-SNAPSHOT</version>
 				<executions>
 					<execution>
+						<goals>
+							<goal>index</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			-->
+			<plugin>
+				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>bnd-indexer-maven-plugin</artifactId>
+				<version>3.2.0</version>
+				<configuration>
+					<localURLs>REQUIRED</localURLs>
+				</configuration>
+				<executions>
+					<execution>
+						<id>index</id>
 						<goals>
 							<goal>index</goal>
 						</goals>
