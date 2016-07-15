@@ -1,4 +1,4 @@
--standalone: /home/cschneider/.m2/repository/index.xml.gz
+-standalone: ${.}/index/target/index.xml.gz
 
 -runsystemcapabilities: ${native_capability}
 

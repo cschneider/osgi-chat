@@ -6,7 +6,6 @@
 	net.lr.demo.chat.irc;version='[1.0.0,1.0.1)',\
 	org.apache.aries.rsa.core;version='[1.9.0,1.9.1)',\
 	org.apache.aries.rsa.discovery.local;version='[1.9.0,1.9.1)',\
-	org.apache.aries.rsa.discovery.shell;version='[1.0.0,1.0.1)',\
 	org.apache.aries.rsa.discovery.zookeeper;version='[1.9.0,1.9.1)',\
 	org.apache.aries.rsa.provider.tcp;version='[1.9.0,1.9.1)',\
 	org.apache.aries.rsa.spi;version='[1.9.0,1.9.1)',\
@@ -23,9 +22,7 @@
 	org.apache.felix.metatype;version='[1.1.2,1.1.3)',\
 	org.apache.felix.scr;version='[2.0.2,2.0.3)',\
 	org.apache.hadoop.zookeeper;version='[3.4.7,3.4.8)',\
-	org.apache.karaf.shell.table;version='[4.0.5,4.0.6)',\
 	org.apache.servicemix.bundles.irclib;version='[1.10.0,1.10.1)',\
-	org.fusesource.jansi;version='[1.12.0,1.12.1)',\
 	org.ops4j.pax.logging.pax-logging-api;version='[1.8.5,1.8.6)',\
 	org.ops4j.pax.logging.pax-logging-service;version='[1.8.5,1.8.6)'
 
@@ -40,6 +37,5 @@
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.provider.tcp)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.topology-manager)',\
 	osgi.identity;filter:='(osgi.identity=net.lr.demo.chat.irc)',\
-	osgi.identity;filter:='(osgi.identity=net.lr.demo.chat.command)',\
-	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.discovery.shell)'
+	osgi.identity;filter:='(osgi.identity=net.lr.demo.chat.command)'
 
