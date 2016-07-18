@@ -11,10 +11,10 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>index</module>
 		<module>all</module>
 		<module>display</module>
 		<module>irc</module>
-		<module>index</module>
 		<module>service</module>
 	</modules>
 </project>

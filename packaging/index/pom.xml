@@ -202,9 +202,19 @@
 
 	<build>
 		<plugins>
-			<!-- <plugin> <groupId>net.lr</groupId> <artifactId>osgi-index-maven-plugin</artifactId> 
-				<version>1.0.0-SNAPSHOT</version> <executions> <execution> <goals> <goal>index</goal> 
-				</goals> </execution> </executions> </plugin> -->
+			<plugin>
+				<groupId>net.lr</groupId>
+				<artifactId>osgi-index-maven-plugin</artifactId>
+				<version>1.0.0-SNAPSHOT</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>index</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+<!-- 
 			<plugin>
 				<groupId>biz.aQute.bnd</groupId>
 				<artifactId>bnd-indexer-maven-plugin</artifactId>
@@ -221,6 +231,7 @@
 					</execution>
 				</executions>
 			</plugin>
+-->
 		</plugins>
 	</build>
 </project>
