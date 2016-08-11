@@ -202,6 +202,7 @@
 
 	<build>
 		<plugins>
+		<!-- 
 			<plugin>
 				<groupId>net.lr</groupId>
 				<artifactId>osgi-index-maven-plugin</artifactId>
@@ -214,7 +215,7 @@
 					</execution>
 				</executions>
 			</plugin>
-<!-- 
+			 -->
 			<plugin>
 				<groupId>biz.aQute.bnd</groupId>
 				<artifactId>bnd-indexer-maven-plugin</artifactId>
@@ -231,7 +232,6 @@
 					</execution>
 				</executions>
 			</plugin>
--->
 		</plugins>
 	</build>
 </project>

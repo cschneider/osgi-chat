@@ -11,7 +11,8 @@
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.provider.tcp)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.topology-manager)',\
 	osgi.identity;filter:='(osgi.identity=net.lr.demo.chat.lcd)',\
-	osgi.identity;filter:='(osgi.identity=net.lr.demo.chat.command)'
+	osgi.identity;filter:='(osgi.identity=net.lr.demo.chat.command)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.discovery.command)'
 
 -runbundles: \
 	com.tinkerforge;version='[2.1.8,2.1.9)',\

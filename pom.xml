@@ -14,6 +14,16 @@
 		<module>packaging</module>
 		<module>discovery</module>
 	</modules>
+	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>bnd</id>
+			<url>https://bndtools.ci.cloudbees.com/job/bnd.master/lastSuccessfulBuild/artifact/dist/bundles/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 
 	<dependencyManagement>
 		<dependencies>
@@ -24,7 +34,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -59,6 +69,41 @@
 	</dependencies>
 
 	<build>
+		<pluginManagement>
+			<plugins>
+			    <plugin>
+                	<groupId>biz.aQute.bnd</groupId>
+                	<artifactId>bnd-export-maven-plugin</artifactId>
+                	<version>3.3.0-SNAPSHOT</version>
+                	<configuration>
+    	                <targetDir>.</targetDir>
+        	        </configuration>
+            	    <executions>
+                	    <execution>
+                    	    <goals>
+                        	    <goal>export</goal>
+                        	</goals>
+                    	</execution>
+                	</executions>
+            	</plugin>
+			
+				<plugin>
+                <groupId>net.lr</groupId>
+                <artifactId>bndrun-maven-plugin</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+                <configuration>
+                    <targetDir>.</targetDir>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>resolve</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>			
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
