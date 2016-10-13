@@ -1,4 +1,10 @@
--standalone: ../index/target/index.xml
+-standalone: true
+-plugin.enroute-distro = \
+    aQute.bnd.repository.maven.pom.provider.BndPomRepository; \
+        snapshotUrls=https://oss.sonatype.org/content/repositories/osgi/; \
+        releaseUrls=https://repo1.maven.org/maven2/; \
+        pom=${.}/../index/pom.xml; \
+        name=chat
 
 -runsystemcapabilities: ${native_capability}
 
