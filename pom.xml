@@ -74,9 +74,10 @@
 			    <plugin>
                 	<groupId>biz.aQute.bnd</groupId>
                 	<artifactId>bnd-export-maven-plugin</artifactId>
-                	<version>3.3.0-SNAPSHOT</version>
+                	<version>3.3.0</version>
                 	<configuration>
-    	                <targetDir>.</targetDir>
+    	                <resolve>true</resolve>
+    	                <failOnChanges>false</failOnChanges>
         	        </configuration>
             	    <executions>
                 	    <execution>
@@ -86,22 +87,6 @@
                     	</execution>
                 	</executions>
             	</plugin>
-			
-				<plugin>
-                <groupId>net.lr</groupId>
-                <artifactId>bndrun-maven-plugin</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-                <configuration>
-                    <targetDir>.</targetDir>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>resolve</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>			
 			</plugins>
 		</pluginManagement>
 		<plugins>

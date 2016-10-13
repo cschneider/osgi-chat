@@ -13,13 +13,15 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>net.lr</groupId>
-                <artifactId>bndrun-maven-plugin</artifactId>
-                <configuration>
-                    <bndrun>service.bndrun</bndrun>
-                </configuration>
-            </plugin>
+			<plugin>
+				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>bnd-export-maven-plugin</artifactId>
+				<configuration>
+					<bndruns>
+						<bndrun>service.bndrun</bndrun>
+					</bndruns>
+				</configuration>
+			</plugin>
         </plugins>
     </build>
 

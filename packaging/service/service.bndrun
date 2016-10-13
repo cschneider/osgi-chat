@@ -32,7 +32,7 @@
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.discovery.command)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.topology-manager)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.http.jetty)',\
-	osgi.identity;filter:='(osgi.identity=org.apache.cxf.dosgi.cxf-dosgi-ri-provider-ws)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.cxf.dosgi.cxf-dosgi-provider-ws)',\
 	osgi.identity;filter:='(osgi.identity=net.lr.demo.chat.command)',\
 	osgi.identity;filter:='(osgi.identity=net.lr.demo.chat.lcd)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.provider.tcp)',\
@@ -43,7 +43,6 @@
 -runbundles: \
 	com.tinkerforge;version='[2.1.8,2.1.9)',\
 	javax.servlet-api;version='[3.1.0,3.1.1)',\
-	jline;version='[2.14.1,2.14.2)',\
 	net.lr.demo.chat.api;version='[1.0.0,1.0.1)',\
 	net.lr.demo.chat.command;version='[1.0.0,1.0.1)',\
 	net.lr.demo.chat.lcd;version='[1.0.0,1.0.1)',\
@@ -63,8 +62,6 @@
 	org.apache.cxf.cxf-rt-frontend-simple;version='[3.1.7,3.1.8)',\
 	org.apache.cxf.cxf-rt-transports-http;version='[3.1.7,3.1.8)',\
 	org.apache.cxf.cxf-rt-wsdl;version='[3.1.7,3.1.8)',\
-	org.apache.cxf.dosgi.cxf-dosgi-ri-common;version='[2.0.0,2.0.1)',\
-	org.apache.cxf.dosgi.cxf-dosgi-ri-provider-ws;version='[2.0.0,2.0.1)',\
 	org.apache.felix.configadmin;version='[1.8.8,1.8.9)',\
 	org.apache.felix.eventadmin;version='[1.4.6,1.4.7)',\
 	org.apache.felix.fileinstall;version='[3.5.2,3.5.3)',\
@@ -79,4 +76,7 @@
 	org.apache.servicemix.bundles.wsdl4j;version='[1.6.3,1.6.4)',\
 	org.apache.ws.xmlschema.core;version='[2.2.1,2.2.2)',\
 	org.ops4j.pax.logging.pax-logging-api;version='[1.8.5,1.8.6)',\
-	org.ops4j.pax.logging.pax-logging-service;version='[1.8.5,1.8.6)'
+	org.ops4j.pax.logging.pax-logging-service;version='[1.8.5,1.8.6)',\
+	org.apache.cxf.dosgi.cxf-dosgi-common;version='[2.0.0,2.0.1)',\
+	org.apache.cxf.dosgi.cxf-dosgi-provider-ws;version='[2.0.0,2.0.1)',\
+	org.fusesource.jansi;version='[1.13.0,1.13.1)'

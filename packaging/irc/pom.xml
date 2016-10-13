@@ -15,20 +15,13 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>net.lr</groupId>
-				<artifactId>bndrun-maven-plugin</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
+				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>bnd-export-maven-plugin</artifactId>
 				<configuration>
-					<bndrun>irc.bndrun</bndrun>
-					<targetDir>.</targetDir>
+					<bndruns>
+						<bndrun>irc.bndrun</bndrun>
+					</bndruns>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>resolve</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>

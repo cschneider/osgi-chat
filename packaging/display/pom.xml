@@ -13,22 +13,16 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>net.lr</groupId>
-                <artifactId>bndrun-maven-plugin</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
-                <configuration>
-                    <bndrun>display.bndrun</bndrun>
-                    <targetDir>.</targetDir>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>resolve</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+			<plugin>
+				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>bnd-export-maven-plugin</artifactId>
+				<configuration>
+					<bndruns>
+						<bndrun>display.bndrun</bndrun>
+					</bndruns>
+					<resolve>true</resolve>
+				</configuration>
+			</plugin>
         </plugins>
     </build>
 
