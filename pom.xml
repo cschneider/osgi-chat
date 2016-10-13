@@ -12,7 +12,6 @@
 		<module>irc</module>
 		<module>command</module>
 		<module>packaging</module>
-		<module>discovery</module>
 	</modules>
 	
 	<pluginRepositories>
