@@ -121,6 +121,12 @@
 			<type>pom</type>
 		</dependency>
 
+			<dependency>
+				<groupId>org.apache.zookeeper</groupId>
+				<artifactId>zookeeper</artifactId>
+				<version>3.4.7</version>
+			</dependency>
+
 
 		<!-- Camel IRC -->
 		<dependency>
@@ -234,4 +240,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>

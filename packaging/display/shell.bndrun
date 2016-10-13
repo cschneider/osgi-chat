@@ -1,27 +1,4 @@
--standalone: /home/cschneider/.m2/repository/index.xml.gz
-
--runsystemcapabilities: ${native_capability}
-
--resolve.effective: active;skip:="osgi.service"
-
--runblacklist: \
-    osgi.identity;filter:='(osgi.identity=slf4j.api)'
-
--runfw: org.apache.felix.framework;version='[5.4.0,5.4.0]'
--runee: JavaSE-1.8
-
--runproperties: \
-	org.osgi.framework.startlevel.beginning=100,\
-	felix.cm.loglevel=4,\
-	felix.fileinstall.log.level=4,\
-	karaf.systemBundlesStartLevel=0,\
-	org.ops4j.pax.logging.DefaultServiceLog.level=INFO,\
-	karaf.startLocalConsole=true,\
-	felix.fileinstall.dir=./etc,\
-	karaf.local.roles='admin,manager,viewer,systembundles',\
-	felix.fileinstall.noInitialDelay=true,\
-	org.osgi.framework.system.packages.extra=sun.misc,\
-	javax.annotation.metafelix.fileinstall.enableConfigSave=false
+-include: ../rsa.bndrun
 
 -runrequires: \
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.eventadmin)',\
