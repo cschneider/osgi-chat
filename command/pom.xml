@@ -16,11 +16,6 @@
 			<groupId>net.lr.demo.chat</groupId>
 			<artifactId>net.lr.demo.chat.api</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.felix</groupId>
-			<artifactId>org.apache.felix.gogo.runtime</artifactId>
-			<version>0.16.2</version>
-		</dependency>
 	</dependencies>
 
 </project>

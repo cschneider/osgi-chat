@@ -1,5 +1,6 @@
 package net.lr.demo.chat.irc;
 
+import org.apache.camel.CamelExecutionException;
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.core.osgi.OsgiDefaultCamelContext;
@@ -39,7 +40,7 @@ public class IRCConnector implements ChatListener {
         String nick() default "tinkerbot";
         String server() default "193.10.255.100";
         int port() default 6667;
-        String channel() default "#jbcnconf";
+        String channel() default "#osgichat";
     }
 
     @Activate
@@ -66,7 +67,11 @@ public class IRCConnector implements ChatListener {
     @Override
     public void onMessage(ChatMessage message) {
         if (!"irc".equals(message.getSenderId())) {
-            producer.sendBody(ircURI, message.getMessage());
+            try {
+                producer.sendBody(ircURI, message.getMessage());
+            } catch (CamelExecutionException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 

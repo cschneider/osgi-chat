@@ -15,7 +15,7 @@ Alternatively the application can be split up into individual deployments per mi
 
 Aries Remote Service Admin can also be used to export a plain OSGi service with rest annotations as a fully featured REST service that can be used to communicate with non OSGi modules or with external systems.
 
-## OSGi chat example for JBCNCONF
+## OSGi chat example
 
 The example implements a chat notification system with several inputs and outputs.
 The inputs will always send to all currently available outputs.
@@ -34,9 +34,8 @@ Install
 - docker on ubuntu (see https://docs.docker.com/engine/installation/linux/ubuntulinux/)
 - jdk 1.8
 - eclipse
-- install bndtools into eclipse (http://bndtools.org/installation.html)
+- install bndtools 3.3 into eclipse (http://bndtools.org/installation.html)
 - maven 3.3.x
-- Checkout and build the index and bndrun maven plugins https://github.com/cschneider/osgi-maven-plugins
 
 ## Source 
 
@@ -46,16 +45,11 @@ Start eclipse and import the directory osgi-chat and all sub dirs as existing ma
 ## Build
 
 - mvn clean install
-- cd packaging/index
-- mvn clean install
-- cd ../..
-- mvn clean install
-- Package consumer and service as docker images using the `sh build.sh` in the respective directories
 
 ## Run
 
 ### Simple deployment chat-all
 ```
 cd packaging/chat-all
-java -jar osgi-chat.jar
+java -jar target/osgi-chat.jar
 ```

@@ -10,8 +10,10 @@
 -runfw: org.apache.felix.framework;version='[5.4.0,5.4.0]'
 -runee: JavaSE-1.8
 
+-runsystempackages: sun.misc,javax.annotation.meta
+
 -runproperties: \
-    osgi.console=8102, \
+    osgi.console=8102,\
 	aries.rsa.hostname=172.17.0.1,\
 	felix.cm.loglevel=4,\
 	org.osgi.framework.bootdelegation=*,\
@@ -19,5 +21,4 @@
 	org.ops4j.pax.logging.DefaultServiceLog.level=INFO,\
 	felix.fileinstall.dir=./etc,\
 	felix.fileinstall.noInitialDelay=true,\
-	org.osgi.framework.system.packages.extra=sun.misc,javax.annotation.meta\
 	felix.fileinstall.enableConfigSave=false

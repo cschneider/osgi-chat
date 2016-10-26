@@ -5,14 +5,14 @@
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.metatype)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.fileinstall)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
-	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
 	osgi.identity;filter:='(osgi.identity=org.ops4j.pax.logging.pax-logging-service)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.discovery.zookeeper)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.provider.tcp)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.topology-manager)',\
 	osgi.identity;filter:='(osgi.identity=net.lr.demo.chat.lcd)',\
 	osgi.identity;filter:='(osgi.identity=net.lr.demo.chat.command)',\
-	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.discovery.command)'
+	osgi.identity;filter:='(osgi.identity=org.apache.aries.rsa.discovery.command)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.jline)'
 
 -runbundles: \
 	com.tinkerforge;version='[2.1.8,2.1.9)',\
@@ -28,11 +28,18 @@
 	org.apache.felix.configadmin;version='[1.8.8,1.8.9)',\
 	org.apache.felix.eventadmin;version='[1.4.6,1.4.7)',\
 	org.apache.felix.fileinstall;version='[3.5.2,3.5.3)',\
-	org.apache.felix.gogo.command;version='[0.16.0,0.16.1)',\
-	org.apache.felix.gogo.runtime;version='[0.10.0,0.10.1)',\
-	org.apache.felix.gogo.shell;version='[0.12.0,0.12.1)',\
 	org.apache.felix.metatype;version='[1.1.2,1.1.3)',\
 	org.apache.felix.scr;version='[2.0.2,2.0.3)',\
 	org.apache.hadoop.zookeeper;version='[3.4.7,3.4.8)',\
 	org.ops4j.pax.logging.pax-logging-api;version='[1.8.5,1.8.6)',\
-	org.ops4j.pax.logging.pax-logging-service;version='[1.8.5,1.8.6)'
+	org.ops4j.pax.logging.pax-logging-service;version='[1.8.5,1.8.6)',\
+	com.github.sarxos.webcam-capture;version='[0.3.11,0.3.12)',\
+	com.nativelibs4java.bridj;version='[0.7.0,0.7.1)',\
+	net.lr.demo.chat.camera;version='[1.0.0,1.0.1)',\
+	org.apache.aries.rsa.discovery.command;version='[1.9.0,1.9.1)',\
+	org.apache.felix.bundlerepository;version='[1.6.0,1.6.1)',\
+	org.apache.felix.gogo.command;version='[1.0.0,1.0.1)',\
+	org.apache.felix.gogo.jline;version='[1.0.0,1.0.1)',\
+	org.apache.felix.gogo.runtime;version='[1.0.0,1.0.1)',\
+	org.fusesource.jansi;version='[1.13.0,1.13.1)',\
+	org.jline;version='[3.0.1,3.0.2)'

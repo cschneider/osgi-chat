@@ -32,7 +32,10 @@ public class LCDWriter implements ChatListener {
     public void activate() throws TimeoutException, NotConnectedException {
         this.df = DateFormat.getTimeInstance(DateFormat.MEDIUM, Locale.ENGLISH);
         this.buffer = new ChatBuffer((message) -> printMessage(message));
+        initlcd();
+    }
 
+    private void initlcd() throws TimeoutException, NotConnectedException {
         IPConnection ipcon = tinkerConnect.getConnection();
         lcd = new BrickletLCD20x4("rV1", ipcon);
         lcd.backlightOn();
@@ -51,6 +54,7 @@ public class LCDWriter implements ChatListener {
     
     public void printMessage(ChatMessage message) {
         try {
+            initlcd();
             lcd.clearDisplay();
             lcd.writeLine((short)0, (short)0, df.format(message.getTime()));
             lcd.writeLine((short)1, (short)0, message.getSender());
