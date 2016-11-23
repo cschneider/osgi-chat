@@ -13,7 +13,8 @@
 		<module>command</module>
 		<module>packaging</module>
 	</modules>
-	
+
+<!--	
 	<pluginRepositories>
 		<pluginRepository>
 			<id>bnd</id>
@@ -23,7 +24,7 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
+-->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
