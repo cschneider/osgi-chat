@@ -28,7 +28,9 @@ public class MotionDetector {
     public void activate() throws Exception {
         IPConnection ipcon = tinkerConnect.getConnection();
         motion = new BrickletMotionDetector("sHt", ipcon);
-        listener = () -> sendMessage();
+        listener = () -> {
+            broker.onMessage(new ChatMessage("sensor", "sensor", "Motion detected"));
+        };
         motion.addMotionDetectedListener(listener);
     }
     
@@ -37,7 +39,4 @@ public class MotionDetector {
         motion.removeMotionDetectedListener(listener);
     }
 
-    private void sendMessage() {
-        broker.onMessage(new ChatMessage("sensor", "sensor", "Motion detected"));
-    }
 }
