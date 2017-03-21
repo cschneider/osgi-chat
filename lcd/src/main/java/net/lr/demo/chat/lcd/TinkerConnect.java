@@ -17,11 +17,12 @@ import com.tinkerforge.NotConnectedException;
 public class TinkerConnect {
     private static Logger LOG = LoggerFactory.getLogger(TinkerConnect.class);
     private IPConnection ipcon;
+    private String motionId;
+    protected String lcdId;
 
     @ObjectClassDefinition(name = "Tinkerforge config")
     @interface TfConfig {
         String host() default "localhost";
-
         int port() default 4223;
     }
 
@@ -53,6 +54,12 @@ public class TinkerConnect {
                                                            firmwareVersion[2]);
                 System.out.println("Device Identifier: " + deviceIdentifier);
                 System.out.println("");
+                if (deviceIdentifier == 212) {
+                    lcdId = uid;
+                }
+                if (deviceIdentifier == 233) {
+                    motionId = uid;
+                }
             }
         });
 
@@ -68,4 +75,12 @@ public class TinkerConnect {
     IPConnection getConnection() {
         return ipcon;
     }
+
+    public String getMotionId() {
+        return motionId;
+    }
+    public String getLcdId() {
+        return lcdId;
+    }
+    
 }
