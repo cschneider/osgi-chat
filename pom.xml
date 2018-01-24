@@ -73,7 +73,7 @@
 			    <plugin>
                 	<groupId>biz.aQute.bnd</groupId>
                 	<artifactId>bnd-export-maven-plugin</artifactId>
-                	<version>3.3.0</version>
+                	<version>3.5.0</version>
                 	<configuration>
     	                <resolve>true</resolve>
     	                <failOnChanges>false</failOnChanges>
@@ -101,7 +101,7 @@
 			<plugin>
 				<groupId>biz.aQute.bnd</groupId>
 				<artifactId>bnd-maven-plugin</artifactId>
-				<version>3.2.0</version>
+				<version>3.5.0</version>
 				<executions>
 					<execution>
 						<goals>
@@ -113,7 +113,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.5</version>
+				<version>2.6</version>
 				<configuration>
 					<archive>
 						<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
